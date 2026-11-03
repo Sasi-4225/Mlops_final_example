@@ -31,7 +31,7 @@ def load_data():
     X = dataset.data.features.copy()
     y = dataset.data.targets.iloc[:, 0].copy()
     X.columns = [str(c).strip().lower().replace(" ", "_") for c in X.columns]
-    aliases = {"trestbps": "trestbps", "thalach": "thalach"}
+    aliases = {"thalch": "thalach"}
     X = X.rename(columns=aliases)
     missing = [c for c in FEATURES if c not in X.columns]
     if missing:
